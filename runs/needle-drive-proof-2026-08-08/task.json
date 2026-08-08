@@ -1,0 +1,44 @@
+{
+  "contract_version": "mansion.task.v1",
+  "task_id": "needle-drive-proof-2026-08-08",
+  "project_id": "needle",
+  "objective": "Create a compact Drive-backed Needle project brief and register its durable references in the Mansion.",
+  "constraints": [
+    "Use the existing Composio Google Drive and Google Docs connections.",
+    "Do not modify the Needle source repository.",
+    "Do not merge or modify sol/needle-resume-proof.",
+    "Persist references only; never store OAuth credentials."
+  ],
+  "inputs": [],
+  "references": [
+    {
+      "kind": "git",
+      "uri": "https://github.com/sincerityDocs/Needle",
+      "authority": "authoritative",
+      "label": "Needle repository"
+    },
+    {
+      "kind": "git",
+      "uri": "https://github.com/sincerityDocs/SOL-PRO-S-MANSION-/tree/sol/needle-resume-proof/projects/needle",
+      "authority": "current",
+      "label": "Sol's bounded Needle resume proof"
+    }
+  ],
+  "allowed_actions": [
+    "find_or_create_drive_folder",
+    "create_google_doc",
+    "move_google_doc_to_folder",
+    "record_mansion_pointers"
+  ],
+  "output_requirements": [
+    "Return mansion.result.v1.",
+    "Reference the verified Drive folder and Google Doc.",
+    "Update Needle's last meaningful run and Drive pointers."
+  ],
+  "result_destination": {
+    "kind": "artifact",
+    "uri": "runs/needle-drive-proof-2026-08-08/result.json",
+    "authority": "current",
+    "label": "Needle Drive proof result"
+  }
+}

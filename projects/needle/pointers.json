@@ -32,5 +32,18 @@
       "label": "Mansion resume pointer"
     }
   ],
-  "drive": []
+  "drive": [
+    {
+      "kind": "drive",
+      "uri": "https://drive.google.com/drive/folders/1ccGpk9PSzL04i_rRG2KY5WsqBY4mmm7R",
+      "authority": "current",
+      "label": "Sol Pro's Mansion Drive folder"
+    },
+    {
+      "kind": "drive",
+      "uri": "https://docs.google.com/document/d/1cbId19rD0a94rfG3Ot9eM83KNNgYG57GTJTvjSFeN6o/edit",
+      "authority": "current",
+      "label": "Needle Mansion project brief"
+    }
+  ]
 }
