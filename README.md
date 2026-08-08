@@ -34,6 +34,15 @@ For Sol's complete operating instructions, start with [`docs/SOL_OPERATIONS.md`]
 
 See [`registry/capabilities.json`](registry/capabilities.json) for evidence labels and current limitations.
 
+## Repository library
+
+[`registry/repositories.json`](registry/repositories.json) catalogs the existing capability repositories using their canonical upstream GitHub URLs and pinned commits. The catalog includes browser, scraping, research, media, automation, development, design, marketing, sales, trading, and agent-runtime resources without copying their source into Mansion.
+
+- Browse the catalog first; load only the repository needed for the task.
+- Keep upstream source linked until an intentional customization begins.
+- Follow [`docs/REPOSITORY_FORK_POLICY.md`](docs/REPOSITORY_FORK_POLICY.md) before creating a `sincerityDocs` fork.
+- Use [`integrations/buzz/`](integrations/buzz/) for Mansion's owned Buzz dispatch boundary.
+
 ## Validate the foundation
 
 ```text

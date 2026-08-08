@@ -52,8 +52,8 @@
       "kind": "collaboration_external_runtime_bridge",
       "evidence_state": "configured_unverified",
       "owner": "buzz",
-      "access": "through_agent_society_or_declared_endpoint",
-      "notes": "Bridge and deployment material exist; current live availability was not proven for this milestone."
+      "access": "integrations/buzz/manifest.json",
+      "notes": "Buzz remains upstream-linked; Mansion owns the dispatch manifest and the invoking runtime resolves current availability."
     },
     {
       "id": "external-repositories",
@@ -61,8 +61,8 @@
       "kind": "capability_source_pool",
       "evidence_state": "documented",
       "owner": "runtime_specific",
-      "access": "C:/dev/agent-society-repos",
-      "notes": "Candidate browser, scraping, media, and specialist repositories are source material, not automatically callable tools."
+      "access": "registry/repositories.json",
+      "notes": "The canonical upstream catalog uses pinned commits and a fork-on-first-change policy; catalog presence remains separate from runtime readiness."
     }
   ]
 }

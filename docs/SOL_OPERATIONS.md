@@ -32,6 +32,18 @@ Confirm which source owns the needed fact. Prefer current source and live eviden
 
 Do not route work through extra systems merely because they exist.
 
+## 4a. Select an external repository when needed
+
+Read `registry/repositories.json` and select the smallest repository that provides the missing capability. Use its pinned upstream commit and load only the relevant files.
+
+- `upstream_link` means use or clone the upstream source as-is.
+- `fork` means the `sincerityDocs` fork contains an intentional customization.
+- `owned_adapter` means Mansion owns the integration contract while upstream source remains unchanged.
+
+If source modification is required and `fork_url` is empty, create the `sincerityDocs` fork before changing code, preserve the original as `upstream`, and update the Mansion record. Do not copy the repository into Mansion merely to make it visible.
+
+For Buzz, read `integrations/buzz/manifest.json`. Hermes remains the orchestrator; Buzz transports collaboration and evidence; runtime credentials stay outside GitHub.
+
 ## 5. Delegate with a bounded task envelope
 
 Use `mansion.task.v1`. Provide the objective, constraints, minimum inputs, references, allowed actions, output requirements, and result destination. Never include secrets or large documents that already have a stable reference.

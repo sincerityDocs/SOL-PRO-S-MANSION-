@@ -1,0 +1,62 @@
+{
+  "contract_version": "mansion.integration.v1",
+  "id": "buzz",
+  "name": "Buzz collaboration and evidence transport",
+  "repository_id": "buzz",
+  "integration_mode": "upstream_link",
+  "upstream": {
+    "url": "https://github.com/block/buzz",
+    "branch": "main",
+    "pinned_commit": "769ac70b741e3ad6809bff14eba29d3dd2cbd318"
+  },
+  "ownership": {
+    "reasoning_and_orchestration": "hermes",
+    "collaboration_and_evidence_transport": "buzz",
+    "optional_mission_authority": "agent-os-postgresql",
+    "project_entry_and_handoff_contracts": "mansion",
+    "credentials_and_endpoints": "runtime"
+  },
+  "contracts": {
+    "task": "protocols/task-envelope.schema.json",
+    "result": "protocols/result-envelope.schema.json",
+    "artifact_reference": "protocols/artifact-reference.schema.json"
+  },
+  "dispatch": {
+    "orchestrator": "hermes",
+    "transport": "buzz",
+    "availability": "resolve_at_invocation",
+    "input_style": "bounded_task_with_references",
+    "output_style": "compact_result_with_evidence"
+  },
+  "existing_implementation": [
+    {
+      "kind": "local",
+      "uri": "C:/dev/terminator-dashboard/lib/runtime/buzz-bridge.ts",
+      "authority": "current",
+      "label": "Agent Society Buzz bridge"
+    },
+    {
+      "kind": "local",
+      "uri": "C:/dev/terminator-dashboard/lib/integrations/buzz.ts",
+      "authority": "current",
+      "label": "Buzz integration client"
+    },
+    {
+      "kind": "local",
+      "uri": "C:/dev/terminator-dashboard/deploy/buzz",
+      "authority": "current",
+      "label": "Buzz deployment material"
+    }
+  ],
+  "fork_policy": {
+    "strategy": "fork_on_first_intentional_source_change",
+    "owner": "sincerityDocs",
+    "fork_url": null,
+    "preserve_upstream_remote": true
+  },
+  "secret_policy": {
+    "store_in_mansion": false,
+    "publish_endpoint_credentials": false,
+    "agents_receive": "capability_handles_and_scoped_operations"
+  }
+}
