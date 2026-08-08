@@ -1,0 +1,36 @@
+{
+  "contract_version": "mansion.project-pointers.v1",
+  "project_id": "needle",
+  "authority": "needle-repository",
+  "source": [
+    {
+      "kind": "git",
+      "uri": "https://github.com/sincerityDocs/Needle",
+      "authority": "authoritative",
+      "label": "Needle repository"
+    },
+    {
+      "kind": "local",
+      "uri": "C:/dev/needle/source",
+      "authority": "current",
+      "label": "Local Needle checkout"
+    }
+  ],
+  "knowledge": [
+    {
+      "kind": "git",
+      "uri": "https://github.com/sincerityDocs/Needle/blob/general-intake/README.md",
+      "authority": "current",
+      "label": "Current repository README"
+    }
+  ],
+  "state": [
+    {
+      "kind": "git",
+      "uri": "projects/needle/STATE.md",
+      "authority": "current",
+      "label": "Mansion resume pointer"
+    }
+  ],
+  "drive": []
+}

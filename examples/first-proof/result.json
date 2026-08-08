@@ -1,0 +1,43 @@
+{
+  "contract_version": "mansion.result.v1",
+  "task_id": "mansion-first-proof-2026-08-08",
+  "project_id": "mansion",
+  "status": "completed",
+  "summary": "The Mansion resolves from its compact registry and the first-proof task and result conform to the strict v1 handoff contracts.",
+  "changes": [
+    {
+      "kind": "git",
+      "uri": "registry/projects.json",
+      "authority": "authoritative",
+      "label": "Registered Mansion project"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "artifact",
+      "uri": "examples/first-proof/task.json",
+      "authority": "current",
+      "label": "Bounded proof task"
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "git",
+      "uri": "scripts/validate-mansion.mjs",
+      "authority": "current",
+      "label": "Repository validator"
+    },
+    {
+      "kind": "git",
+      "uri": "tests/mansion.test.mjs",
+      "authority": "current",
+      "label": "Behavioral checks"
+    }
+  ],
+  "warnings": [
+    "This proof validates the GitHub foundation only; it does not exercise Drive, Hermes, Agent Society, Buzz, or consequential external actions."
+  ],
+  "next_actions": [
+    "Use Mansion to resume one real project before adding more automation."
+  ]
+}

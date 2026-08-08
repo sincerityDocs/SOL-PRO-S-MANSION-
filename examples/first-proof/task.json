@@ -1,0 +1,37 @@
+{
+  "contract_version": "mansion.task.v1",
+  "task_id": "mansion-first-proof-2026-08-08",
+  "project_id": "mansion",
+  "objective": "Resolve the Mansion project and verify that its compact task and result contracts are usable without loading project history.",
+  "constraints": [
+    "Read committed Mansion state only.",
+    "Do not call paid models or mutate external services.",
+    "Return references instead of embedding source documents."
+  ],
+  "inputs": [],
+  "references": [
+    {
+      "kind": "git",
+      "uri": "registry/projects.json",
+      "authority": "authoritative",
+      "label": "Project registry"
+    },
+    {
+      "kind": "git",
+      "uri": "projects/mansion/STATE.md",
+      "authority": "current",
+      "label": "Mansion state"
+    }
+  ],
+  "allowed_actions": ["read_repository_state", "validate_contracts"],
+  "output_requirements": [
+    "Return mansion.result.v1.",
+    "Reference validation evidence and relevant files."
+  ],
+  "result_destination": {
+    "kind": "artifact",
+    "uri": "examples/first-proof/result.json",
+    "authority": "current",
+    "label": "First-proof result"
+  }
+}

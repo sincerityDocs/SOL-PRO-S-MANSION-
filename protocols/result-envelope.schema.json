@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sinceritydocs.github.io/sol-pro-mansion/result-envelope.schema.json",
+  "title": "Mansion Result Envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "task_id",
+    "project_id",
+    "status",
+    "summary",
+    "changes",
+    "artifacts",
+    "evidence",
+    "warnings",
+    "next_actions"
+  ],
+  "properties": {
+    "contract_version": { "const": "mansion.result.v1" },
+    "task_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,199}$" },
+    "project_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" },
+    "status": {
+      "type": "string",
+      "enum": ["completed", "partial", "blocked", "failed", "cancelled"]
+    },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "changes": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "https://sinceritydocs.github.io/sol-pro-mansion/artifact-reference.schema.json" }
+    },
+    "artifacts": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "https://sinceritydocs.github.io/sol-pro-mansion/artifact-reference.schema.json" }
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "https://sinceritydocs.github.io/sol-pro-mansion/artifact-reference.schema.json" }
+    },
+    "warnings": {
+      "type": "array",
+      "maxItems": 50,
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 }
+    },
+    "next_actions": {
+      "type": "array",
+      "maxItems": 50,
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 }
+    }
+  }
+}

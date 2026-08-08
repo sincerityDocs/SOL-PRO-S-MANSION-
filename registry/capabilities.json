@@ -1,0 +1,68 @@
+{
+  "contract_version": "mansion.capabilities.v1",
+  "capabilities": [
+    {
+      "id": "composio",
+      "name": "Composio MCP",
+      "kind": "saas_action_layer",
+      "evidence_state": "user_verified",
+      "owner": "sol",
+      "access": "native_chat_mcp",
+      "notes": "Sol has user-verified access to the required SaaS tools. Mansion stores pointers and does not wrap Composio."
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "kind": "repository_execution",
+      "evidence_state": "verified",
+      "owner": "user_started_session",
+      "access": "codex_task",
+      "notes": "Use for bounded repository changes and verification."
+    },
+    {
+      "id": "work",
+      "name": "ChatGPT Work",
+      "kind": "artifact_execution",
+      "evidence_state": "documented",
+      "owner": "sol",
+      "access": "chatgpt_work_mode",
+      "notes": "Use for heavyweight artifacts and project execution when available."
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "kind": "orchestration_and_local_execution",
+      "evidence_state": "verified",
+      "owner": "hermes",
+      "access": "local_cli_gateway_or_mcp",
+      "notes": "Gateway, projects, sessions, storage, skills, and an n8n MCP connection were observed. Invocation remains optional."
+    },
+    {
+      "id": "agent-society",
+      "name": "Agent Society",
+      "kind": "mission_control_plane",
+      "evidence_state": "configured_unverified",
+      "owner": "agent_os_postgresql",
+      "access": "local_repository_and_services",
+      "notes": "Mission, task, artifact, approval, and handoff contracts exist. Dashboard, worker, and PostgreSQL were offline during inspection."
+    },
+    {
+      "id": "buzz",
+      "name": "Buzz",
+      "kind": "collaboration_external_runtime_bridge",
+      "evidence_state": "configured_unverified",
+      "owner": "buzz",
+      "access": "through_agent_society_or_declared_endpoint",
+      "notes": "Bridge and deployment material exist; current live availability was not proven for this milestone."
+    },
+    {
+      "id": "external-repositories",
+      "name": "External Capability Repositories",
+      "kind": "capability_source_pool",
+      "evidence_state": "documented",
+      "owner": "runtime_specific",
+      "access": "C:/dev/agent-society-repos",
+      "notes": "Candidate browser, scraping, media, and specialist repositories are source material, not automatically callable tools."
+    }
+  ]
+}

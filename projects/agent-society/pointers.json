@@ -1,0 +1,42 @@
+{
+  "contract_version": "mansion.project-pointers.v1",
+  "project_id": "agent-society",
+  "authority": "current-source-and-runtime-evidence",
+  "source": [
+    {
+      "kind": "local",
+      "uri": "C:/dev/terminator-dashboard",
+      "authority": "authoritative",
+      "label": "Canonical implementation"
+    },
+    {
+      "kind": "local",
+      "uri": "C:/dev/Agent-Society/README.md",
+      "authority": "current",
+      "label": "Local project front door"
+    }
+  ],
+  "knowledge": [
+    {
+      "kind": "local",
+      "uri": "C:/dev/terminator-dashboard/docs/README.md",
+      "authority": "current",
+      "label": "Current document authority index"
+    },
+    {
+      "kind": "local",
+      "uri": "C:/Users/dansh/OneDrive/Desktop/Obsidian/TERMINATOR_Obsidian_Vault/TERMINATOR_Obsidian_Vault",
+      "authority": "authoritative",
+      "label": "Canonical knowledge vault"
+    }
+  ],
+  "state": [
+    {
+      "kind": "git",
+      "uri": "projects/agent-society/STATE.md",
+      "authority": "current",
+      "label": "Mansion resume pointer"
+    }
+  ],
+  "drive": []
+}

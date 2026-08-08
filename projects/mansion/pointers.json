@@ -1,0 +1,36 @@
+{
+  "contract_version": "mansion.project-pointers.v1",
+  "project_id": "mansion",
+  "authority": "mansion",
+  "source": [
+    {
+      "kind": "git",
+      "uri": "https://github.com/sincerityDocs/SOL-PRO-S-MANSION-",
+      "authority": "authoritative",
+      "label": "Mansion source"
+    }
+  ],
+  "knowledge": [
+    {
+      "kind": "git",
+      "uri": "docs/SOL_OPERATIONS.md",
+      "authority": "current",
+      "label": "Sol operating guide"
+    },
+    {
+      "kind": "git",
+      "uri": "docs/ARCHITECTURE.md",
+      "authority": "current",
+      "label": "Mansion architecture"
+    }
+  ],
+  "state": [
+    {
+      "kind": "git",
+      "uri": "projects/mansion/STATE.md",
+      "authority": "current",
+      "label": "Active Mansion state"
+    }
+  ],
+  "drive": []
+}

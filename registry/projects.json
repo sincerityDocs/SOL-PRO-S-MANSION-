@@ -1,0 +1,70 @@
+{
+  "contract_version": "mansion.projects.v1",
+  "projects": [
+    {
+      "id": "mansion",
+      "name": "Sol Pro's Mansion",
+      "status": "active",
+      "evidence_state": "verified",
+      "state_path": "projects/mansion/STATE.md",
+      "pointers_path": "projects/mansion/pointers.json",
+      "preferred_execution": ["composio", "codex", "work"],
+      "orchestrator": "sol",
+      "source_repositories": [
+        {
+          "kind": "git",
+          "uri": "https://github.com/sincerityDocs/SOL-PRO-S-MANSION-",
+          "authority": "authoritative",
+          "label": "Mansion repository"
+        }
+      ],
+      "runtimes": ["composio", "codex", "work", "hermes", "buzz"],
+      "last_meaningful_run": {
+        "kind": "artifact",
+        "uri": "examples/first-proof/result.json",
+        "authority": "current",
+        "label": "Foundation first proof"
+      }
+    },
+    {
+      "id": "needle",
+      "name": "Needle",
+      "status": "active",
+      "evidence_state": "verified",
+      "state_path": "projects/needle/STATE.md",
+      "pointers_path": "projects/needle/pointers.json",
+      "preferred_execution": ["codex", "work"],
+      "orchestrator": "sol",
+      "source_repositories": [
+        {
+          "kind": "git",
+          "uri": "https://github.com/sincerityDocs/Needle",
+          "authority": "authoritative",
+          "label": "Needle source repository"
+        }
+      ],
+      "runtimes": ["codex", "work", "composio"],
+      "last_meaningful_run": null
+    },
+    {
+      "id": "agent-society",
+      "name": "TERMINATOR Agent Society",
+      "status": "active",
+      "evidence_state": "configured_unverified",
+      "state_path": "projects/agent-society/STATE.md",
+      "pointers_path": "projects/agent-society/pointers.json",
+      "preferred_execution": ["codex", "hermes"],
+      "orchestrator": "hermes",
+      "source_repositories": [
+        {
+          "kind": "local",
+          "uri": "C:/dev/terminator-dashboard",
+          "authority": "authoritative",
+          "label": "Canonical local implementation; no Git remote configured during inspection"
+        }
+      ],
+      "runtimes": ["hermes", "agent-os", "postgresql", "n8n", "buzz"],
+      "last_meaningful_run": null
+    }
+  ]
+}
