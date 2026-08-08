@@ -8,7 +8,11 @@
       "evidence_state": "verified",
       "state_path": "projects/mansion/STATE.md",
       "pointers_path": "projects/mansion/pointers.json",
-      "preferred_execution": ["composio", "codex", "work"],
+      "preferred_execution": [
+        "composio",
+        "codex",
+        "work"
+      ],
       "orchestrator": "sol",
       "source_repositories": [
         {
@@ -18,7 +22,13 @@
           "label": "Mansion repository"
         }
       ],
-      "runtimes": ["composio", "codex", "work", "hermes", "buzz"],
+      "runtimes": [
+        "composio",
+        "codex",
+        "work",
+        "hermes",
+        "buzz"
+      ],
       "last_meaningful_run": {
         "kind": "artifact",
         "uri": "examples/first-proof/result.json",
@@ -33,7 +43,10 @@
       "evidence_state": "verified",
       "state_path": "projects/needle/STATE.md",
       "pointers_path": "projects/needle/pointers.json",
-      "preferred_execution": ["codex", "work"],
+      "preferred_execution": [
+        "codex",
+        "work"
+      ],
       "orchestrator": "sol",
       "source_repositories": [
         {
@@ -43,8 +56,17 @@
           "label": "Needle source repository"
         }
       ],
-      "runtimes": ["codex", "work", "composio"],
-      "last_meaningful_run": null
+      "runtimes": [
+        "codex",
+        "work",
+        "composio"
+      ],
+      "last_meaningful_run": {
+        "kind": "artifact",
+        "uri": "runs/needle-drive-proof-2026-08-08/result.json",
+        "authority": "current",
+        "label": "Needle latest meaningful run"
+      }
     },
     {
       "id": "agent-society",
@@ -53,7 +75,10 @@
       "evidence_state": "configured_unverified",
       "state_path": "projects/agent-society/STATE.md",
       "pointers_path": "projects/agent-society/pointers.json",
-      "preferred_execution": ["codex", "hermes"],
+      "preferred_execution": [
+        "codex",
+        "hermes"
+      ],
       "orchestrator": "hermes",
       "source_repositories": [
         {
@@ -63,7 +88,13 @@
           "label": "Canonical local implementation; no Git remote configured during inspection"
         }
       ],
-      "runtimes": ["hermes", "agent-os", "postgresql", "n8n", "buzz"],
+      "runtimes": [
+        "hermes",
+        "agent-os",
+        "postgresql",
+        "n8n",
+        "buzz"
+      ],
       "last_meaningful_run": null
     }
   ]

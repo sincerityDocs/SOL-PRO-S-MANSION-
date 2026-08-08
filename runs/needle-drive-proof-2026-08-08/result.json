@@ -1,0 +1,39 @@
+{
+  "contract_version": "mansion.result.v1",
+  "task_id": "needle-drive-proof-2026-08-08",
+  "project_id": "needle",
+  "status": "completed",
+  "summary": "Created a dedicated Mansion folder and compact Needle project brief in Google Drive, moved the brief into the folder, and returned durable references for Mansion registration.",
+  "changes": [
+    {
+      "kind": "drive",
+      "uri": "https://drive.google.com/drive/folders/1ccGpk9PSzL04i_rRG2KY5WsqBY4mmm7R",
+      "authority": "current",
+      "label": "Sol Pro's Mansion Drive folder"
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "drive",
+      "uri": "https://docs.google.com/document/d/1cbId19rD0a94rfG3Ot9eM83KNNgYG57GTJTvjSFeN6o/edit",
+      "authority": "current",
+      "label": "Needle Mansion project brief"
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "git",
+      "uri": "https://github.com/sincerityDocs/SOL-PRO-S-MANSION-/tree/sol/needle-resume-proof/projects/needle",
+      "authority": "current",
+      "label": "Needle resume proof used for the compact brief"
+    }
+  ],
+  "warnings": [
+    "The Drive brief records the observed Needle branch state; the Needle repository remains authoritative.",
+    "Sol's resume-proof branch remains separate and unmerged."
+  ],
+  "next_actions": [
+    "Review sol/needle-resume-proof through the normal branch review path.",
+    "Verify Needle general-intake release evidence before deciding its promotion path."
+  ]
+}

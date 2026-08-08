@@ -85,6 +85,63 @@ export function resolveProject(root, id) {
   return { project, pointers };
 }
 
+function writeJson(filePath, value) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+function resolveRepositoryFile(root, filePath) {
+  const relativePath = path.isAbsolute(filePath) ? path.relative(root, filePath) : filePath;
+  return insideRoot(root, relativePath);
+}
+
+export function recordRun(root, taskFile, resultFile) {
+  const task = validateEnvelope(root, "task", loadJson(resolveRepositoryFile(root, taskFile)));
+  const result = validateEnvelope(root, "result", loadJson(resolveRepositoryFile(root, resultFile)));
+  if (result.task_id !== task.task_id || result.project_id !== task.project_id) {
+    throw new Error("Result does not match its task.");
+  }
+
+  const registry = loadProjectRegistry(root);
+  const project = registry.projects.find((entry) => entry.id === task.project_id);
+  if (!project) throw new Error(`Unknown project: ${task.project_id}`);
+
+  const destination = insideRoot(root, task.result_destination.uri);
+  const runDirectory = path.dirname(destination);
+  const taskDestination = path.join(runDirectory, "task.json");
+  const pointersFile = insideRoot(root, project.pointers_path);
+  const pointers = loadJson(pointersFile);
+  if (!Array.isArray(pointers.drive)) throw new Error(`Invalid Drive pointers for project: ${task.project_id}`);
+
+  const knownDriveUris = new Set(pointers.drive.map((reference) => reference.uri));
+  let drivePointersAdded = 0;
+  for (const reference of [...result.changes, ...result.artifacts, ...result.evidence]) {
+    if (reference.kind !== "drive" || knownDriveUris.has(reference.uri)) continue;
+    pointers.drive.push(reference);
+    knownDriveUris.add(reference.uri);
+    drivePointersAdded += 1;
+  }
+
+  project.last_meaningful_run = {
+    kind: "artifact",
+    uri: task.result_destination.uri,
+    authority: "current",
+    label: `${project.name} latest meaningful run`,
+  };
+
+  writeJson(taskDestination, task);
+  writeJson(destination, result);
+  writeJson(pointersFile, pointers);
+  writeJson(path.join(root, "registry", "projects.json"), registry);
+
+  return {
+    taskId: task.task_id,
+    projectId: task.project_id,
+    runDirectory: path.relative(root, runDirectory).replaceAll(path.sep, "/"),
+    drivePointersAdded,
+  };
+}
+
 export function validateMansion(root) {
   const registry = loadProjectRegistry(root);
   for (const project of registry.projects) resolveProject(root, project.id);

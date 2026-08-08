@@ -83,6 +83,9 @@ Codex, Work, or Hermes can run:
 ```text
 npm run validate
 npm run resolve -- <project-id>
+npm run record -- --task <task.json> --result <result.json>
 ```
 
 Sol does not need computer-use to read or operate the GitHub-native Mansion.
+
+Use `record` only after the external action has completed and its matching v1 result envelope contains the durable references returned by the action. The command stores the run, updates `last_meaningful_run`, and registers new Drive references without storing OAuth credentials.
