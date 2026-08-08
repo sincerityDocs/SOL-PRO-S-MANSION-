@@ -66,6 +66,9 @@ test("records a completed run and registers its Drive pointers", () => {
     fs.mkdirSync(incomingRoot, { recursive: true });
     const taskPath = path.join(incomingRoot, "task.json");
     const resultPath = path.join(incomingRoot, "result.json");
+    const pointersPath = path.join(temporaryRoot, "projects", "needle", "pointers.json");
+    const initialPointers = JSON.parse(fs.readFileSync(pointersPath, "utf8"));
+    const initialDriveUris = initialPointers.drive.map((pointer) => pointer.uri);
     const driveFolder = {
       kind: "drive",
       uri: "https://drive.google.com/drive/folders/test-folder-id",
@@ -127,8 +130,11 @@ test("records a completed run and registers its Drive pointers", () => {
     const needle = registry.projects.find((project) => project.id === "needle");
     assert.equal(needle.last_meaningful_run.uri, "runs/needle-drive-proof-test/result.json");
 
-    const pointers = JSON.parse(fs.readFileSync(path.join(temporaryRoot, "projects", "needle", "pointers.json"), "utf8"));
-    assert.deepEqual(pointers.drive.map((pointer) => pointer.uri), [driveFolder.uri, driveDocument.uri]);
+    const pointers = JSON.parse(fs.readFileSync(pointersPath, "utf8"));
+    assert.deepEqual(
+      pointers.drive.map((pointer) => pointer.uri),
+      [...initialDriveUris, driveFolder.uri, driveDocument.uri],
+    );
   } finally {
     fs.rmSync(temporaryRoot, { recursive: true, force: true });
   }
